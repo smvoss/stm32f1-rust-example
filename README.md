@@ -60,12 +60,12 @@ versions of the utility functions we're used to having (and in this example, spe
 In our main file, we'll have to define multiple items to make it possbile for us to run on our embedded target:
 
 * `#![no_std]`
- * std libs are heavy, and [our platform doesn't provide them](https://doc.rust-lang.org/nightly/rustc/platform-support.html)
+  * std libs are heavy, and [our platform doesn't provide them](https://doc.rust-lang.org/nightly/rustc/platform-support.html)
 * `#![panic_handler]`
- * This is a relic of not having a standard lib, and we must define how we handle panics
- * In this example, I do nothing. Hopefully we don't panic!
+  * This is a relic of not having a standard lib, and we must define how we handle panics
+  * In this example, I do nothing. Hopefully we don't panic!
 * `#![no_main]`
- * Due to this, we also need to mark our `main()` as `#[no_mangle]` so the entrypoint can still be found
+  * Due to this, we also need to mark our `main()` as `#[no_mangle]` so the entrypoint can still be found
 
 As you can tell, it very quickly goes into the weeds that embedded usually does (not that we're particularily surprised).
 
